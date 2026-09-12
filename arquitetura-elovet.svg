@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1150" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="1700" height="1150" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="850" y="45" font-size="30" font-weight="bold" fill="#0d47a1" text-anchor="middle">Arquitetura Macro — Elo Vet (Sprint 3 DevOps)</text>
+  <text x="850" y="72" font-size="16" font-style="italic" fill="#37474f" text-anchor="middle">API Java (Spring Boot) + PostgreSQL Flexible Server (PaaS) sobre Azure App Service | Sem containers</text>
+  <line x1="380" y1="88" x2="1320" y2="88" stroke="#90caf9" stroke-width="2"/>
+
+  <!-- USUARIOS column -->
+  <text x="140" y="130" font-size="15" font-weight="bold" fill="#37474f">USUÁRIOS</text>
+
+  <g>
+    <rect x="40" y="150" width="220" height="80" rx="8" fill="#dbeeff" stroke="#1565c0" stroke-width="1.5"/>
+    <text x="150" y="178" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Tutor / Clínica</text>
+    <text x="150" y="198" font-size="12" text-anchor="middle" fill="#37474f">App Mobile / Web</text>
+    <text x="150" y="214" font-size="12" text-anchor="middle" fill="#37474f">(consome API REST)</text>
+  </g>
+
+  <g>
+    <rect x="40" y="250" width="220" height="80" rx="8" fill="#dbeeff" stroke="#1565c0" stroke-width="1.5"/>
+    <text x="150" y="278" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Desenvolvedor</text>
+    <text x="150" y="298" font-size="12" text-anchor="middle" fill="#37474f">curl / Postman</text>
+    <text x="150" y="314" font-size="12" text-anchor="middle" fill="#37474f">Azure CLI (Cloud Shell)</text>
+  </g>
+
+  <g>
+    <rect x="40" y="350" width="220" height="80" rx="8" fill="#dbeeff" stroke="#1565c0" stroke-width="1.5"/>
+    <text x="150" y="378" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Admin / DBA</text>
+    <text x="150" y="398" font-size="12" text-anchor="middle" fill="#37474f">psql / DBeaver</text>
+    <text x="150" y="414" font-size="12" text-anchor="middle" fill="#37474f">(acesso direto ao banco)</text>
+  </g>
+
+  <!-- REDE column -->
+  <text x="345" y="130" font-size="15" font-weight="bold" fill="#37474f">REDE</text>
+  <rect x="310" y="150" width="130" height="280" rx="16" fill="#eceff1" stroke="#90a4ae" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="375" y="285" font-size="14" font-weight="bold" text-anchor="middle" fill="#455a64">INTERNET</text>
+  <text x="375" y="305" font-size="11" font-style="italic" text-anchor="middle" fill="#607d8b">HTTPS (443)</text>
+  <text x="375" y="320" font-size="11" font-style="italic" text-anchor="middle" fill="#607d8b">TCP 5432 (psql)</text>
+
+  <!-- Arrows from users to internet -->
+  <path d="M260,190 L305,230" stroke="#1565c0" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M260,290 L305,290" stroke="#1565c0" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M260,390 L305,350" stroke="#1565c0" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Flow circle 1 -->
+  <circle cx="290" cy="255" r="15" fill="#c0392b"/>
+  <text x="290" y="260" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+
+  <!-- Azure Cloud outer boundary -->
+  <rect x="470" y="105" width="1200" height="960" rx="10" fill="none" stroke="#1565c0" stroke-width="2" stroke-dasharray="8,4"/>
+  <rect x="1560" y="115" width="100" height="26" fill="#e3f2fd" stroke="#1565c0"/>
+  <text x="1610" y="133" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d47a1">AZURE CLOUD</text>
+
+  <rect x="490" y="120" width="660" height="24" fill="#ffffff" stroke="#1565c0"/>
+  <text x="500" y="137" font-size="12" font-weight="bold" fill="#0d47a1">Microsoft Azure | Subscription: Azure for Students | Region: Canada Central</text>
+
+  <!-- Resource Group boundary -->
+  <rect x="500" y="160" width="1140" height="780" rx="8" fill="none" stroke="#37474f" stroke-width="2" stroke-dasharray="6,4"/>
+  <rect x="515" y="150" width="330" height="24" fill="#ffffff" stroke="#37474f"/>
+  <text x="525" y="167" font-size="12" font-weight="bold" fill="#263238">Resource Group: rg-elovet-devops</text>
+
+  <!-- Arrow internet -> RG -->
+  <path d="M440,290 L500,290" stroke="#1565c0" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <circle cx="470" cy="290" r="15" fill="#c0392b"/>
+  <text x="470" y="295" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">2</text>
+
+  <!-- App Service Plan box -->
+  <rect x="540" y="220" width="420" height="260" rx="8" fill="none" stroke="#1e88e5" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="555" y="245" font-size="13" font-weight="bold" fill="#0d47a1">App Service Plan — plan-elovet-devops (Linux, B1)</text>
+
+  <rect x="565" y="265" width="370" height="190" rx="8" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="750" y="295" font-size="15" font-weight="bold" text-anchor="middle" fill="#e65100">Web App (API Java)</text>
+  <text x="750" y="316" font-size="12" text-anchor="middle" fill="#5d4037">api-java-seurm-&lt;RM&gt;</text>
+  <text x="750" y="335" font-size="12" text-anchor="middle" fill="#5d4037">Spring Boot 3 · Java 21</text>
+  <text x="750" y="354" font-size="12" text-anchor="middle" fill="#5d4037">Spring Security + JWT</text>
+  <text x="750" y="373" font-size="12" text-anchor="middle" fill="#5d4037">Flyway + Hibernate (JPA)</text>
+  <rect x="670" y="390" width="160" height="26" rx="4" fill="#ffe0b2" stroke="#ef6c00"/>
+  <text x="750" y="407" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">porta 443 / 80</text>
+
+  <!-- PostgreSQL box -->
+  <rect x="1030" y="220" width="450" height="380" rx="8" fill="none" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="1045" y="245" font-size="13" font-weight="bold" fill="#1b5e20">Azure Database for PostgreSQL — Flexible Server (PaaS)</text>
+
+  <rect x="1055" y="265" width="410" height="130" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="1260" y="292" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">Firewall (Regras de IP)</text>
+  <text x="1260" y="314" font-size="12" text-anchor="middle" fill="#5d4037">Regra: AllowAll (0.0.0.0–255.255.255.255)</text>
+  <text x="1260" y="332" font-size="11" font-style="italic" text-anchor="middle" fill="#795548">liberado para viabilizar a correção/demo</text>
+  <text x="1260" y="350" font-size="11" font-style="italic" text-anchor="middle" fill="#795548">restringir após a avaliação</text>
+
+  <rect x="1055" y="410" width="410" height="170" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="1260" y="438" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b5e20">elovet-postgres-&lt;RM&gt;</text>
+  <text x="1260" y="459" font-size="12" text-anchor="middle" fill="#33691e">PostgreSQL 14 · Standard_B1ms (Burstable)</text>
+  <text x="1260" y="478" font-size="12" text-anchor="middle" fill="#33691e">Database: elovet</text>
+  <text x="1260" y="497" font-size="12" text-anchor="middle" fill="#33691e">Tabelas: elo_pet, elo_veterinario, users,</text>
+  <text x="1260" y="514" font-size="12" text-anchor="middle" fill="#33691e">care_plan, care_plan_item...</text>
+  <rect x="1180" y="530" width="160" height="26" rx="4" fill="#c8e6c9" stroke="#2e7d32"/>
+  <text x="1260" y="547" font-size="12" font-weight="bold" text-anchor="middle" fill="#1b5e20">porta 5432</text>
+
+  <!-- Arrow Web App -> Firewall -> Postgres (JDBC) -->
+  <path d="M935,360 L1055,330" stroke="#1565c0" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <circle cx="1000" cy="343" r="15" fill="#c0392b"/>
+  <text x="1000" y="348" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
+  <rect x="945" y="368" width="90" height="22" fill="#e3f2fd" stroke="#1565c0"/>
+  <text x="990" y="384" font-size="11" font-weight="bold" text-anchor="middle" fill="#0d47a1">JDBC/SSL</text>
+
+  <path d="M1260,395 L1260,410" stroke="#2e7d32" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <circle cx="1260" cy="403" r="15" fill="#c0392b"/>
+  <text x="1260" y="408" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">4</text>
+
+  <!-- GitHub Actions box (outside RG, still inside Azure boundary area visually but represents external CI/CD) -->
+  <rect x="540" y="520" width="420" height="150" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="750" y="550" font-size="15" font-weight="bold" text-anchor="middle" fill="#4a148c">GitHub Actions (CI/CD)</text>
+  <text x="750" y="572" font-size="12" text-anchor="middle" fill="#4a148c">Repositório: java-sprint3</text>
+  <text x="750" y="591" font-size="12" text-anchor="middle" fill="#4a148c">Build: ./gradlew bootJar -x test</text>
+  <text x="750" y="610" font-size="12" text-anchor="middle" fill="#4a148c">Deploy: azure/webapps-deploy (publish profile)</text>
+  <text x="750" y="632" font-size="11" font-style="italic" text-anchor="middle" fill="#7b1fa2">Trigger: push na branch main</text>
+
+  <!-- Arrow GitHub Actions -> Web App -->
+  <path d="M750,520 L750,455" stroke="#6a1b9a" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <circle cx="750" cy="487" r="15" fill="#c0392b"/>
+  <text x="750" y="492" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">5</text>
+
+  <!-- Client -> Web App direct HTTPS arrow (from REDE box, top path) -->
+  <path d="M440,270 C 480,240 520,220 560,265" stroke="#1565c0" stroke-width="2" fill="none" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+
+  <!-- Legend box -->
+  <rect x="500" y="960" width="1140" height="150" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="520" y="990" font-size="15" font-weight="bold" fill="#0d47a1">Fluxo das requisições:</text>
+  <text x="520" y="1015" font-size="12.5" fill="#263238">(1) Tutor/Desenvolvedor/DBA envia requisição HTTPS (API) ou conexão TCP (psql) pela internet.</text>
+  <text x="520" y="1037" font-size="12.5" fill="#263238">(2) Tráfego chega ao Resource Group rg-elovet-devops, já roteado para o recurso de destino (App Service ou Postgres).</text>
+  <text x="520" y="1059" font-size="12.5" fill="#263238">(3) O Web App (API Java) autentica via JWT e, para operações de CRUD, abre uma conexão JDBC/SSL com o Postgres, validada pela regra de firewall.</text>
+  <text x="520" y="1081" font-size="12.5" fill="#263238">(4) O PostgreSQL Flexible Server persiste/retorna os dados solicitados (tabelas elo_pet, elo_veterinario etc.).</text>
+  <text x="520" y="1103" font-size="12.5" fill="#263238">(5) A cada push no repositório, o GitHub Actions builda o .jar e publica automaticamente no Web App (CI/CD).</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1565c0"/>
+    </marker>
+  </defs>
+</svg>
